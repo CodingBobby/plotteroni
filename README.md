@@ -59,3 +59,6 @@ If we have everything set up, we can now draw the plot to the html page.
 ```js
 plot.draw()
 ```
+
+When opening the html from above in your browser you should see this:
+![Plotteroni Scrrenshot](./images/readme_screenshot.png)
