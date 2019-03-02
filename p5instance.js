@@ -47,6 +47,24 @@ function draw() {
         }
         endShape()
     }
+
+    // labels
+    noStroke()
+    let labels = {
+        w: 70,
+        h: 15 + fig.length * 15
+    }
+    fill(255)
+    rect(cvs.w - labels.w, 0, cvs.w, labels.h)
+
+    for(var f in fig) {
+        let cc = f % colors.length
+        fill(colors[cc].r, colors[cc].g, colors[cc].b)
+        const left = cvs.w - labels.w
+        rect(left + 5, 20 * f, 15, 15)
+        fill(10)
+        text(plot.functions[f].name, left + 30, 12 + 20 * f)
+    }
 }
 
 let colors = [{
