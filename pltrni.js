@@ -17,8 +17,18 @@ class Plotteroni {
                 if(!is) return console.error('invalid options')
             }
         }
-        this.functions = []
+
+        function check(x) {
+            return options.hasOwnProperty(x)
+        }
+
+        if(!check('scale')) options.scale = 1
+
+        if(!check('height') || !check('width'))
+            return console.error('invalid options')
+
         this.options = options
+        this.functions = []
     }
 
     add(...funcs) {
@@ -40,7 +50,7 @@ class Plotteroni {
         script1.src = 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js'
         document.head.appendChild(script1)
         let script2 = document.createElement("script")
-        script2.src = 'p5instance.js'
+        script2.src = 'https://cdn.jsdelivr.net/gh/codingbobby/Plotteroni/p5instance.min.js'
         document.body.appendChild(script2)
     }
 }
